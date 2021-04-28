@@ -77,3 +77,6 @@ https://expressjs.com/en/starter/hello-world.html
 https://www.youtube.com/watch?v=L72fhGm1tfE&ab_channel=TraversyMedia
 https://stackoverflow.com/questions/40556650/generate-random-number-with-node-js-page
 */
+/*
+Jesper och Jon har gjort denna tillsammans (lika mycket)
+*/
