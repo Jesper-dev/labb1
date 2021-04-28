@@ -47,7 +47,7 @@ const setP = (arr) => {
 const getData = async () => {
 /*     if(jsonData)return */
 
-ul.innerHTML = ''
+    ul.innerHTML = ''
     await axios.get('http://localhost:3000/api/members')
         .then(res => jsonData = res.data)
         .catch(err => console.log(err))

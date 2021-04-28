@@ -42,6 +42,7 @@ app.post('/api/members', (req, res) => {
 
     members.push(newMember)
     res.json(members)
+
 })
 
 // How to serve html files in different routes
