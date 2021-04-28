@@ -1,0 +1,29 @@
+{
+  "name": "labb1",
+  "version": "1.0.0",
+  "description": "��#\u0000 \u0000l\u0000a\u0000b\u0000b\u00001\u0000\r\u0000 \u0000",
+  "main": "index.js",
+  "engines": {
+    "node": "14.15.5",
+    "npm": "7.5.3"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jesper-dev/labb1.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Jesper-dev/labb1/issues"
+  },
+  "homepage": "https://github.com/Jesper-dev/labb1#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "nodemon": "^2.0.7"
+  }
+}

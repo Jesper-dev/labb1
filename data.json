@@ -1,0 +1,20 @@
+{
+    "LetsVestMebersTierList": [
+        {
+            "name": "Jesper",
+            "place": 1
+        },
+        {
+            "name": "Jon",
+            "place": 2
+        },
+        {
+            "name": "Anton",
+            "place": 2
+        },
+        {
+            "name": "Kevin",
+            "place": 2
+        }
+    ]
+}
