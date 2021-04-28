@@ -5,12 +5,21 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
+    <script src="https://unpkg.com/axios/dist/axios.min.js" defer></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script src="main.js" defer></script>
     <title>Express Masters</title>
 </head>
 <body>
-    <h1>Node LABB1</h1>
-    <input id="number-input" type="number" />
+    <div class="container p-3 my-3">
+    <h1>Node LABB1 - Let's Vest Members</h1>
+    <input class="form-control" id="number-input" type="text" />
+    <button class="btn btn-primary mt-4">SHOW NAMES</button>
+    <button class="btn btn-danger mt-4">HIDE NAMES</button>
+    <button class="btn btn-success mt-4">ADD NAMES</button>
+    <ul class="list-group mt-4" id="list">
+
+    </ul>
+</div>
 </body>
 </html>

@@ -6,29 +6,42 @@ const express = require('express'),
 
 const json = require('./data.json')
 
+const members = require('./Members')
+
 //Set public as our static folder
 app.use(express.static(path.join(__dirname, 'public')))
+
+//Handle raw JSON
+app.use(express.json())
+// Handle URL encoded data
+app.use(express.urlencoded({ extended: false }))
 
 //Route handler
 app.get('/', (req, res) => {
     res.send({hey: "buddy"})
 })
 
-// Middleware function
-const logger = (req, res, next) => {
-    console.log(`${req.protocol}://${req.get('host')}${req.originalUrl}`)
-    next()
-}
-
-// Initalize middleware
-app.use(logger)
-
 // Works like an api endpoint
 app.get('/api/members', (req, res) => {
-    res.json(json)
+    res.json(members)
 })
+
+
 app.post('/api/members', (req, res) => {
-    res.json(json)
+    let num = Math.floor(Math.random(0, 1) * 1024)
+    const newMember = {
+        id: num,
+        name: req.body.name,
+        email: req.body.email,
+        status: 'active'
+    }
+/*
+    if(!newMember.name || !newMember.email){
+       return res.status(400).json({ msg: 'Please include!!! both email and Name!!!'})
+    } */
+
+    members.push(newMember)
+    res.json(members)
 })
 
 // How to serve html files in different routes
