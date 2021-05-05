@@ -43,10 +43,11 @@ app.get('/', (req, res) => {
 
 // Add a new user
 app.post('/users/add', (req, res) => {
-    pool.query('INSERT INTO users SET ?', req.body, (err, result) => {
+    const user = {...req.body, id: Date.now()}
+    pool.query('INSERT INTO users SET ?', user, (err, result) => {
         if(err) throw err;
 
-        res.status(201).send(`User added with ID: ${req.body.id}`);
+        res.status(201).send(`User ${req.body.firstName} added with ID: ${req.body.id}`);
     })
 });
 
