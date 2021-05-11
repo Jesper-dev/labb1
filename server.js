@@ -27,7 +27,7 @@ app.get('/users', (req, res) => {
 });
 
 // Displays a single user based in id
-app.get('/users/:id', (req, res) => {
+app.get('/user/:id', (req, res) => {
     const id = req.params.id;
     pool.query('SELECT * FROM users WHERE id = ?', id, (error, result) => {
         if(error) throw error;
@@ -42,34 +42,35 @@ app.get('/', (req, res) => {
 })
 
 // Add a new user
-app.post('/users/add', (req, res) => {
-    const user = {...req.body, id: Date.now()}
+app.post('/user', (req, res) => {
+    const id = Date.now()
+    const user = {...req.body, id: id}
     pool.query('INSERT INTO users SET ?', user, (err, result) => {
         if(err) throw err;
 
-        res.status(201).send(`User ${req.body.firstName} added with ID: ${req.body.id}`);
+        res.status(201).send({message: `User ${req.body.firstName} added with ID: ${id}`});
     })
 });
 
 // Update a user
-app.put('/users/update/:id', (req, res) => {
+app.put('/user/:id', (req, res) => {
     const id = req.params.id;
 
     pool.query('UPDATE users SET ? WHERE id = ?', [req.body, id], (error, result) => {
         if (error) throw error;
 
-        res.send(`User with ID: ${id} was sucessfully updated`)
+        res.send({message: `User with ID: ${id} was sucessfully updated`})
     })
 })
 
 // Delete a user
-app.delete('/users/delete/:id', (req, res) => {
+app.delete('/user/:id', (req, res) => {
     const id = req.params.id;
 
     pool.query('DELETE FROM users WHERE id = ?', id, (err, result) => {
         if(err) throw err;
 
-        res.send(`User with ID: ${id} was sucessfully deleted`)
+        res.send({message: `User with ID: ${id} was sucessfully deleted`})
     })
 })
 
