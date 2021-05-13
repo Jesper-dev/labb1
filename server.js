@@ -6,9 +6,13 @@ const express = require('express'),
     pool = require('./data/config');
     mysql = require('mysql')
 
+
 const json = require('./data.json')
 let counterNum = 0;
 const members = require('./Members')
+
+
+
 
 //Set public as our static folder
 app.use(express.static(path.join(__dirname, 'public')))
@@ -82,10 +86,6 @@ app.post('/api/members', (req, res) => {
         email: req.body.email,
         status: 'active'
     }
-/*
-    if(!newMember.name || !newMember.email){
-       return res.status(400).json({ msg: 'Please include!!! both email and Name!!!'})
-    } */
 
     members.push(newMember)
     res.json(members)
@@ -101,7 +101,9 @@ app.get('/about', (req, res) => {
 app.get('/api/random', (req, res) => {
     let num = Math.floor(Math.random(0, 1) * 1024)
     res.send({number: num})
+
 })
+
 
 app.get('/api/custom_random/:num', (req, res) => {
     let num = Math.floor(Math.random(0, 1) * req.params.num)
@@ -121,3 +123,5 @@ app.get('/api/counter/add', (req, res) => {
 const PORT = process.env.PORT || 3000;
 
 app.listen(PORT, () => console.log(`Server started succefully on port: http://localhost:${PORT}`));
+
+module.exports = app;   //For testning
