@@ -15,6 +15,7 @@ describe('randomNum', () => {
         .end((err, res) => {
             res.should.have.status(200);
             res.body.should.be.a('object')
+            res.body.number.should.be.a('number')
             done()
             console.log(res.body)
         })
@@ -28,6 +29,7 @@ describe('customRandomNum', () => {
         .end((err, res) => {
             res.should.have.status(200);
             res.body.should.be.a('object')
+            res.body.number.should.be.a('number')
             done()
             console.log(res.body)
         })
@@ -42,6 +44,7 @@ describe('counter', () => {
         .end((err, res) => {
             res.should.have.status(200);
             res.body.should.be.a('object')
+            res.body.number.should.be.a('number')
             done()
             console.log(res.body)
         })
@@ -56,6 +59,7 @@ describe('addToCounter', () => {
         .end((err, res) => {
             res.should.have.status(200);
             res.body.should.be.a('object')
+            res.body.number.should.be.a('number')
             done()
             console.log(res.body)
         })
@@ -71,6 +75,7 @@ describe('addTwoToCounter', () => {
         .end((err, res) => {
             res.should.have.status(200);
             res.body.should.be.a('object')
+            res.body.number.should.be.a('number')
             done()
             console.log(res.body)
         })
@@ -86,6 +91,7 @@ describe('doubleCounter', () => {
         .end((err, res) => {
             res.should.have.status(200);
             res.body.should.be.a('object')
+            res.body.number.should.be.a('number')
             done()
             console.log(res.body)
         })

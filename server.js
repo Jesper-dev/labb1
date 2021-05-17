@@ -112,23 +112,23 @@ app.get('/api/custom_random/:num', (req, res) => {
 })
 
 app.get('/api/counter', (req, res) => {
-    res.send({num: counterNum})
+    res.send({number: counterNum})
 })
 app.get('/api/counter/add', (req, res) => {
     counterNum++;
-    res.send({num: counterNum})
+    res.send({number: counterNum})
 })
 
 //*Fanns inte innan testet skrevs
 app.get('/api/counter/addTwo', (req, res) => {
     counterNum += 2;
-    res.send({num: counterNum})
+    res.send({number: counterNum})
 })
 
 //*Fanns inte innan testet skrevs
 app.get('/api/counter/double', (req, res) => {
     counterNum *= 2;
-    res.send({num: counterNum})
+    res.send({number: counterNum})
 })
 
 //Tells express which port to listen to, either the environement variables port or port 3000 if env port does not exist
