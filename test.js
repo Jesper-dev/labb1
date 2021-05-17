@@ -7,6 +7,8 @@ const { describe } = require('mocha');
 let server = require('./server.js')
 let should = chai.should();
 chai.use(chaiHttp);
+describe('Random number endpoints', function () {
+
 
 describe('randomNum', () => {
     it('Should get a random number between 1 and 1024', (done) => {
@@ -17,7 +19,7 @@ describe('randomNum', () => {
             res.body.should.be.a('object')
             res.body.number.should.be.a('number')
             done()
-            console.log(res.body)
+            //console.log(res.body)
         })
 
     })
@@ -31,12 +33,13 @@ describe('customRandomNum', () => {
             res.body.should.be.a('object')
             res.body.number.should.be.a('number')
             done()
-            console.log(res.body)
+            //console.log(res.body)
         })
 
     })
 })
-
+})
+describe('Counter endpoints', function () {
 describe('counter', () => {
     it('Should get the current value of the counter', (done) => {
         chai.request(server)
@@ -46,7 +49,7 @@ describe('counter', () => {
             res.body.should.be.a('object')
             res.body.number.should.be.a('number')
             done()
-            console.log(res.body)
+            //console.log(res.body)
         })
 
     })
@@ -61,7 +64,7 @@ describe('addToCounter', () => {
             res.body.should.be.a('object')
             res.body.number.should.be.a('number')
             done()
-            console.log(res.body)
+            //console.log(res.body)
         })
 
     })
@@ -77,7 +80,7 @@ describe('addTwoToCounter', () => {
             res.body.should.be.a('object')
             res.body.number.should.be.a('number')
             done()
-            console.log(res.body)
+            //console.log(res.body)
         })
     })
 })
@@ -93,7 +96,8 @@ describe('doubleCounter', () => {
             res.body.should.be.a('object')
             res.body.number.should.be.a('number')
             done()
-            console.log(res.body)
+            //console.log(res.body)
         })
     })
 })
+});
