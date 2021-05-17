@@ -119,6 +119,18 @@ app.get('/api/counter/add', (req, res) => {
     res.send({num: counterNum})
 })
 
+//*Fanns inte innan testet skrevs
+app.get('/api/counter/addTwo', (req, res) => {
+    counterNum += 2;
+    res.send({num: counterNum})
+})
+
+//*Fanns inte innan testet skrevs
+app.get('/api/counter/double', (req, res) => {
+    counterNum *= 2;
+    res.send({num: counterNum})
+})
+
 //Tells express which port to listen to, either the environement variables port or port 3000 if env port does not exist
 const PORT = process.env.PORT || 3000;
 

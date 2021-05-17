@@ -8,7 +8,7 @@ let server = require('./server.js')
 let should = chai.should();
 chai.use(chaiHttp);
 
-describe('/GET randomNum', () => {
+describe('randomNum', () => {
     it('Should get a random number between 1 and 1024', (done) => {
         chai.request(server)
         .get('/api/random')
@@ -21,7 +21,7 @@ describe('/GET randomNum', () => {
 
     })
 })
-describe('/GET customRandomNum', () => {
+describe('customRandomNum', () => {
     it('Should get a random number between 1 and input of the user', (done) => {
         chai.request(server)
         .get('/api/custom_random/200')
@@ -35,7 +35,7 @@ describe('/GET customRandomNum', () => {
     })
 })
 
-describe('/GET counter', () => {
+describe('counter', () => {
     it('Should get the current value of the counter', (done) => {
         chai.request(server)
         .get('/api/counter')
@@ -49,7 +49,7 @@ describe('/GET counter', () => {
     })
 })
 
-describe('/GET addToCounter', () => {
+describe('addToCounter', () => {
     it('Should add one to the counter', (done) => {
         chai.request(server)
         .get('/api/counter/add')
@@ -63,7 +63,31 @@ describe('/GET addToCounter', () => {
     })
 })
 
+//*Fanns inte innan
+describe('addTwoToCounter', () => {
+    it('Should add two to the counter', (done) => {
+        chai.request(server)
+        .get('/api/counter/addTwo')
+        .end((err, res) => {
+            res.should.have.status(200);
+            res.body.should.be.a('object')
+            done()
+            console.log(res.body)
+        })
+    })
+})
 
 
-
-
+//*Fanns inte innan
+describe('doubleCounter', () => {
+    it('Should double the current counter', (done) => {
+        chai.request(server)
+        .get('/api/counter/double')
+        .end((err, res) => {
+            res.should.have.status(200);
+            res.body.should.be.a('object')
+            done()
+            console.log(res.body)
+        })
+    })
+})
